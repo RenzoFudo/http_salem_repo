@@ -2,6 +2,9 @@ package server
 
 import (
 	"errors"
+	"github.com/RenzoFudo/http_salem_repo/internal/domain/models"
+	"github.com/RenzoFudo/http_salem_repo/internal/storage"
+	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 )
@@ -57,7 +60,7 @@ func (s *Server) RegisterHandler(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-	ctx.String(http.StatusOK, "User was saved")
+	ctx.String(http.StatusOK, "пользователь был добавлен")
 }
 
 func (s *Server) AuthHandler(ctx *gin.Context) {
@@ -75,7 +78,7 @@ func (s *Server) AuthHandler(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-	ctx.String(http.StatusOK, "Auth completed")
+	ctx.String(http.StatusOK, "авторизация прошла успешно")
 }
 
 func (s *Server) AllBookHandler(ctx *gin.Context) {
@@ -116,7 +119,7 @@ func (s *Server) SaveBookHandler(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-	ctx.String(http.StatusCreated, "book was saved")
+	ctx.String(http.StatusCreated, "книга была добавлена")
 }
 
 func (s *Server) DeleteBookHandler(ctx *gin.Context) {
@@ -129,5 +132,5 @@ func (s *Server) DeleteBookHandler(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
-	ctx.String(http.StatusOK, "book was deleted")
+	ctx.String(http.StatusOK, "книга была удалена")
 }

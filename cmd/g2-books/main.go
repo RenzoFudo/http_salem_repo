@@ -1,6 +1,9 @@
 package main
 
 import (
+	"github.com/RenzoFudo/http_salem_repo/internal/config"
+	"github.com/RenzoFudo/http_salem_repo/internal/server"
+	"github.com/RenzoFudo/http_salem_repo/internal/storage"
 	"log"
 )
 

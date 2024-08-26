@@ -3,7 +3,7 @@ package storage
 import (
 	"errors"
 
-	errtext
+	errtext "github.com/RenzoFudo/http_salem_repo/internal/domain/errors"
 )
 
 var ErrInvalidAuthData = errors.New(errtext.InvalidAuthDataError)

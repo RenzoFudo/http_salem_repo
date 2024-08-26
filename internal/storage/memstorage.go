@@ -1,9 +1,10 @@
 package storage
 
 import (
+	"github.com/RenzoFudo/http_salem_repo/internal/domain/models"
+	"github.com/google/uuid"
 	"log"
-
-
+)
 
 type MemStorage struct {
 	usersMap map[string]models.User
